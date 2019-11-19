@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * |      |  /   |  (   |  )   |  =   |  <   |  >   |  P1  |  P2  |  P3  |  P+  |  '   |
      * |------+------+------+------+------+------+------+--^---+------+------+------+------|
-     * |      |  |   |  ~   |  ´   |  \   |  ^   |  +   |  P0  |  P.  |PEnter|  P-  |      |
+     * |      |  |   |  ~   |  ´   |  \   |  ^   |  +   |  P0  |  P.  |PEnter|  P-  |  Ins |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * |      |      |      |      |      |   Backspace |      | Home | PgDn | PgUp |  End |
      * `-----------------------------------------------------------------------------------'
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______, _______, _______, _______, _______, _______, _______, KC_P7, KC_P8, KC_P9, KC_PSLS, _______, \
             _______, LSFT(KC_1), SE_QUO2, LSFT(KC_3), SE_DLR, LSFT(KC_5), SE_AMPR, KC_P4, KC_P5, KC_P6, KC_PAST, SE_QUES, \
             _______, SE_SLSH, SE_LPRN, SE_RPRN, SE_EQL, SE_LESS, SE_GRTR, KC_P1, KC_P2, KC_P3, KC_PPLS, SE_APOS, \
-            _______, SE_PIPE, SE_TILD, SE_ACUT, SE_BSLS, SE_CIRC, SE_PLUS, KC_P0, KC_PDOT, KC_PENT, KC_PMNS, _______, \
+            _______, SE_PIPE, SE_TILD, SE_ACUT, SE_BSLS, SE_CIRC, SE_PLUS, KC_P0, KC_PDOT, KC_PENT, KC_PMNS, KC_INS, \
             _______, _______, _______, _______, _______, KC_BSPC, KC_BSPC, _______, KC_HOME, KC_PGDN, KC_PGUP,  KC_END \
             ),
 

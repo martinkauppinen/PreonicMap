@@ -44,21 +44,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------------------------------.
      * |  Del |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |  Tab |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |   Å  |
+     * |  Tab |   Q  |   X  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |   Å  |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |  Esc |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   Ö  |   Ä  |
+     * |  Esc |   A  |   W  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   Ö  |   Ä  |
      * |------+------+------+------+--^^--+------+------+--^^--+------+------+------+------|
-     * |Shift |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  Up  |Enter |
+     * |Shift |   Z  |   S  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  Up  |Enter |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Ctrl |      | Func | Alt  |Space |    Lower    |Raise |   -  | Left | Down |Right |
+     * | Ctrl |      | Func | Alt  |Space |  Swap Hands |      |   -  | Left | Down |Right |
      * `-----------------------------------------------------------------------------------'
      */
     [_GAME] = LAYOUT_preonic_grid( \
             KC_DEL,     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC, \
-            KC_TAB,     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   SE_AA,  \
-            KC_ESC,     KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L, SE_OSLH,   SE_AE, \
-            KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_UP,  KC_ENT,  \
-            KC_LCTL, KC_NO,   QWERTY, KC_LALT,   KC_SPC,  LOWER,  LOWER,   RAISE, SE_MINS, KC_LEFT,    KC_DOWN, KC_RGHT  \
+            KC_TAB,     KC_Q,    KC_X,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   SE_AA,  \
+            KC_ESC,     KC_A,    KC_W,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L, SE_OSLH,   SE_AE, \
+            KC_LSFT,    KC_Z,    KC_S,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_UP,  KC_ENT,  \
+            KC_LCTL, KC_NO,   QWERTY, KC_LALT,   KC_SPC,  SH_MON,  SH_MON,   _______, SE_MINS, KC_LEFT,    KC_DOWN, KC_RGHT  \
             ),
 
     /* Lower

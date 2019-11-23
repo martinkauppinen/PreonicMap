@@ -1,2 +1,3 @@
 SRC += muse.c
 DIP_SWITCH_ENABLE=no
+SWAP_HANDS_ENABLE=yes

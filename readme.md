@@ -1,4 +1,8 @@
 # Custom Swedish layout
+This is my Swedish layout for the Preonic for everyday and gaming use.
+In gaming mode, W and S are shifted downward as I find this more comfortable.
+Also, space swaps hands to enable full access to the keys with the left hand
+in place, so the right hand does not have to let go of the mouse.
 
 ```
     /* Default
@@ -19,13 +23,13 @@
      * ,-----------------------------------------------------------------------------------.
      * |  Del |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |  Tab |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |   Å  |
+     * |  Tab |   Q  |   X  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |   Å  |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |  Esc |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   Ö  |   Ä  |
+     * |  Esc |   A  |   W  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   Ö  |   Ä  |
      * |------+------+------+------+--^^--+------+------+--^^--+------+------+------+------|
-     * |Shift |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  Up  |Enter |
+     * |Shift |   Z  |   S  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  Up  |Enter |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Ctrl |      | Func | Alt  |Space |    Lower    |Raise |   -  | Left | Down |Right |
+     * | Ctrl |      | Func | Alt  |Space |  Swap Hands |      |   -  | Left | Down |Right |
      * `-----------------------------------------------------------------------------------'
      */
 

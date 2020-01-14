@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Lower
      * ,-----------------------------------------------------------------------------------.
-     * |      |      |      |      |      |      |      |  P7  |  P8  |  P9  |  P/  |      |
+     * |      |GUI(1)|GUI(2)|GUI(3)|GUI(4)|GUI(5)|GUI(6)|  P7  |  P8  |  P9  |  P/  |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * |      |  !   |  "   |  #   |  $   |  %   |  &   |  P4  |  P5  |  P6  |  P*  |  ?   |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-----------------------------------------------------------------------------------'
      */
     [_LOWER] = LAYOUT_preonic_grid(
-            _______, _______,    _______, _______,    _______, _______,    _______, KC_P7,   KC_P8,   KC_P9,   KC_PSLS, _______, \
+            _______, LGUI(KC_1), LGUI(KC_2), LGUI(KC_3), LGUI(KC_4), LGUI(KC_5), LGUI(KC_6), KC_P7,   KC_P8,   KC_P9,   KC_PSLS, _______, \
             _______, LSFT(KC_1), SE_QUO2, LSFT(KC_3), SE_DLR,  LSFT(KC_5), SE_AMPR, KC_P4,   KC_P5,   KC_P6,   KC_PAST, SE_QUES, \
             _______, SE_SLSH,    SE_LPRN, SE_RPRN,    SE_EQL,  SE_LESS,    SE_GRTR, KC_P1,   KC_P2,   KC_P3,   KC_PPLS, SE_APOS, \
             _______, SE_PIPE,    SE_TILD, SE_ACUT,    SE_BSLS, SE_CIRC,    SE_PLUS, KC_P0,   KC_PDOT, KC_PENT, KC_PMNS, KC_INS,  \

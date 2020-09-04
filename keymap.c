@@ -15,6 +15,7 @@ enum preonic_keycodes {
     RAISE,
     QWERTY,
     GAME,
+    MY_GRAV,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -78,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______,  LGUI(KC_1),  LGUI(KC_2),  LGUI(KC_3),  LGUI(KC_4),  LGUI(KC_5),  LGUI(KC_6),  KC_INS,   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,  \
             _______,  LSFT(KC_1),  SE_QUO2,     LSFT(KC_3),  SE_DLR,      LSFT(KC_5),  SE_AMPR,     SE_QUES,  KC_PSLS,  KC_P7,    KC_P8,    KC_P9,  \
             _______,  SE_SLSH,     SE_LPRN,     SE_RPRN,     SE_EQL,      SE_LESS,     SE_GRTR,     SE_APOS,  KC_PAST,  KC_P4,    KC_P5,    KC_P6,  \
-            _______,  SE_PIPE,     SE_TILD,     SE_ACUT,     SE_BSLS,     SE_CIRC,     SE_PLUS,     _______,  KC_PPLS,  KC_P1,    KC_P2,    KC_P3,   \
+            _______,  SE_PIPE,     SE_TILD,     MY_GRAV,     SE_BSLS,     SE_CIRC,     SE_PLUS,     _______,  KC_PPLS,  KC_P1,    KC_P2,    KC_P3,   \
             _______,  _______,     _______,     _______,     _______,     _______,     _______,     _______,  KC_PMNS,  KC_P0,    KC_PDOT,  KC_PENT \
             ),
 
@@ -127,6 +128,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+/* Resurrect dead keys */
+void resurrect(uint16_t keycode) {
+    tap_code(keycode);
+    tap_code(KC_SPC);
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case QWERTY:
@@ -160,6 +167,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 update_tri_layer(_LOWER, _RAISE, _ADJUST);
             }
             return false;
+            break;
+        case MY_GRAV:
+            if (record->event.pressed) {
+                bool shifted = keyboard_report->mods & MOD_BIT(KC_LSFT);
+
+                if (shifted)
+                    unregister_code(KC_LSFT);
+                else
+                    register_code(KC_LSFT);
+
+                resurrect(SE_ACUT);
+
+                if (shifted)
+                    register_code(KC_LSFT);
+                else
+                    unregister_code(KC_LSFT);
+            }
+
             break;
       }
     return true;

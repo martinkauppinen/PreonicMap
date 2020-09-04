@@ -16,6 +16,8 @@ enum preonic_keycodes {
     QWERTY,
     GAME,
     MY_GRAV,
+    MY_TILD,
+    MY_CIRC,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -79,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______,  LGUI(KC_1),  LGUI(KC_2),  LGUI(KC_3),  LGUI(KC_4),  LGUI(KC_5),  LGUI(KC_6),  KC_INS,   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,  \
             _______,  LSFT(KC_1),  SE_QUO2,     LSFT(KC_3),  SE_DLR,      LSFT(KC_5),  SE_AMPR,     SE_QUES,  KC_PSLS,  KC_P7,    KC_P8,    KC_P9,  \
             _______,  SE_SLSH,     SE_LPRN,     SE_RPRN,     SE_EQL,      SE_LESS,     SE_GRTR,     SE_APOS,  KC_PAST,  KC_P4,    KC_P5,    KC_P6,  \
-            _______,  SE_PIPE,     SE_TILD,     MY_GRAV,     SE_BSLS,     SE_CIRC,     SE_PLUS,     _______,  KC_PPLS,  KC_P1,    KC_P2,    KC_P3,   \
+            _______,  SE_PIPE,     MY_TILD,     MY_GRAV,     SE_BSLS,     MY_CIRC,     SE_PLUS,     _______,  KC_PPLS,  KC_P1,    KC_P2,    KC_P3,   \
             _______,  _______,     _______,     _______,     _______,     _______,     _______,     _______,  KC_PMNS,  KC_P0,    KC_PDOT,  KC_PENT \
             ),
 
@@ -129,8 +131,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 /* Resurrect dead keys */
-void resurrect(uint16_t keycode) {
-    tap_code(keycode);
+inline void resurrect(uint16_t keycode, uint32_t mods) {
+    register_mods(mods);
+    register_code(keycode);
+    unregister_code(keycode);
+    unregister_mods(mods);
     tap_code(KC_SPC);
 }
 
@@ -177,16 +182,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 else
                     register_code(KC_LSFT);
 
-                resurrect(SE_ACUT);
+                resurrect(SE_ACUT, 0);
 
                 if (shifted)
                     register_code(KC_LSFT);
                 else
                     unregister_code(KC_LSFT);
             }
-
             break;
-      }
+        case MY_TILD:
+            if (record->event.pressed) {
+                resurrect(SE_TILD, MOD_BIT(KC_ALGR));
+            }
+            break;
+        case MY_CIRC:
+            if (record->event.pressed) {
+                resurrect(SE_CIRC, MOD_BIT(KC_LSFT));
+            }
+            break;
+    }
     return true;
 };
 
